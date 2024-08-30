@@ -8,6 +8,8 @@
 import React from 'react';
 import type {PropsWithChildren} from 'react';
 import {
+  Button,
+  Image,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -19,16 +21,13 @@ import {
 
 import {
   Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
+ 
 } from 'react-native/Libraries/NewAppScreen';
+import Home from './Home';
 
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
-
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -38,27 +37,25 @@ function App(): React.JSX.Element {
   };
 
   return (
-    <View
-    style={[
-      styles.container,
-      {
-        // Try setting `flexDirection` to `"row"`.
-        flexDirection: 'row',
-      },
-    ]}>
-      
-    <View style={{flex: 1, backgroundColor: 'red'}} />
-    <View style={{flex: 2, backgroundColor: 'darkorange'}} />
-    <View style={{flex: 3, backgroundColor: 'green'}} />
+    <View>
+    <Home></Home>
   </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    padding: 20,
+    paddingTop: 50,
+  },
+  tinyLogo: {
+    width: 50,
+    height: 50,
+  },
+  logo: {
+    width: 66,
+    height: 58,
   },
 });
+
 
 export default App;
