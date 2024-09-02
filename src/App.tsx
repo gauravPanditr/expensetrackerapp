@@ -4,58 +4,56 @@
  *
  * @format
  */
-
+import { enableScreens } from 'react-native-screens';
+enableScreens();
 import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  Button,
-  Image,
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
 
-import {
-  Colors,
- 
-} from 'react-native/Libraries/NewAppScreen';
-import Home from './Home';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
+
+import SignUp from './pages/singup';
+import Login from './pages/login';
+
+const Stack = createNativeStackNavigator();
+// type SectionProps = PropsWithChildren<{
+//   title: string;
+// }>;
 
 function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+  // const isDarkMode = useColorScheme() === 'dark';
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+  // const backgroundStyle = {
+  //   backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+  // };
 
   return (
-    <View>
-    <Home></Home>
-  </View>
+
+     <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="SignUp"
+          component={SignUp}
+        />
+        <Stack.Screen name="login" component={Login} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    paddingTop: 50,
-  },
-  tinyLogo: {
-    width: 50,
-    height: 50,
-  },
-  logo: {
-    width: 66,
-    height: 58,
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     paddingTop: 50,
+//   },
+//   tinyLogo: {
+//     width: 50,
+//     height: 50,
+//   },
+//   logo: {
+//     width: 66,
+//     height: 58,
+//   },
+// });
 
 
 export default App;
