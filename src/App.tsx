@@ -4,10 +4,11 @@
  *
  * @format
  */
-import { enableScreens } from 'react-native-screens';
-enableScreens();
-import React from 'react';
 
+import React from 'react';
+import { enableScreens } from 'react-native-screens';
+
+enableScreens(true);
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
