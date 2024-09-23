@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { SafeAreaView, Button, TextInput, View, Text, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import CustomTextInput from '../components/CustomInput';
 
 const SignUp: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -21,15 +22,15 @@ const SignUp: React.FC = () => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <TextInput
-        style={styles.input}
+    <SafeAreaView >
+      <CustomTextInput 
         placeholder="First Name"
         value={firstName}
         onChangeText={setFirstName}
+        label="First Name"
       />
       <TextInput
-        style={styles.input}
+        
         placeholder="Last Name"
         value={lastName}
         onChangeText={setLastName}

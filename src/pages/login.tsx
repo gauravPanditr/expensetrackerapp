@@ -17,7 +17,7 @@ const Login: React.FC = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('https://reqres.in/api/users?page=2');
+        const response = await axios.get('https://reqres.in/api/users?page=1');
         console.log(response.data); // Log the response data
         setUsers(response.data.data);
       } catch (error) {
